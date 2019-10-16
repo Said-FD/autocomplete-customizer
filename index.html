@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autocomplete test</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <main class="main">
+    <section class="section">
+      <h1 class="autocomplete-caption">Favorite Country</h1>
+      <form action="#" autocomplete="off">
+        <div class="autocomplete">
+          <input type="text" class="autocomplete-input" name="searchName" />
+          <button type="reset" class="autocomplete-reset-btn">
+            <span class="search-icon-circle"></span>
+          </button>
+        </div>
+      </form>
+      <ul class="autocomplete-list"></ul>
+      <div class="api-sources">
+        <h2 class="api-title">Here are a few open APIs</h2>
+        <p class="api-description">Paste values in the proper fields <span class="text-to-large">below</span><span class="text-from-large">on the right side</span></p>
+        <div class="api-example">
+          <button type="button" class="api-example-toggle">
+            <span>Rest countries API (<span class="text-from-small">fetched by </span>default)</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-x">
+              <line class="line-1" x1="7" y1="0" x2="7" y2="14"></line>
+              <line class="line-2" x1="0" y1="7" x2="14" y2="7"></line>
+            </svg>
+          </button>
+          <div class="api-example-content">
+            <div class="api-example-inner">
+              <p><span>Source API URL</span> https://restcountries.eu/rest/v2/all?fields=name;flag</p>
+              <p><span>Name property</span> name</p>
+              <p><span>Image property</span> flag</p>
+            </div>
+          </div>
+        </div>
+        <div class="api-example">
+          <button type="button" class="api-example-toggle">
+            <span>SWAPI - The Star Wars API</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-x">
+              <line class="line-1" x1="7" y1="0" x2="7" y2="14"></line>
+              <line class="line-2" x1="0" y1="7" x2="14" y2="7"></line>
+            </svg>
+          </button>
+          <div class="api-example-content">
+            <div class="api-example-inner">
+              <p><span>Source API URL</span> https://swapi.co/api/people</p>
+              <p><span>Name property</span> name</p>
+            </div>
+          </div>
+        </div>
+        <div class="api-example">
+          <button type="button" class="api-example-toggle">
+            <span>Chuck Norris random jokes API</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-x">
+              <line class="line-1" x1="7" y1="0" x2="7" y2="14"></line>
+              <line class="line-2" x1="0" y1="7" x2="14" y2="7"></line>
+            </svg>
+          </button>
+          <div class="api-example-content">
+            <div class="api-example-inner">
+              <p><span>Source API URL</span> https://api.icndb.com/jokes/random/100</p>
+              <p><span>Name property</span> joke</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <form action="#" class="api-form-autocomplete" autocomplete="off">
+        <h2 class="api-title">Choose API for Autocomplete</h2>
+        <div class="api-input-group">
+          <label class="api-input-label">
+            <span>Autocomplete caption</span>
+            <input type="text" class="api-input-caption" name="caption">
+          </label>
+          <label class="api-input-label">
+            <span>Source API URL
+              <span class="asterisk">&nbsp;*</span>
+            </span>
+            <input type="url" class="api-input-endpoint" name="endpoint" value="https://swapi.co/api/people" required>
+          </label>
+          <label class="api-input-label">
+            <span>Name property
+              <span class="asterisk">&nbsp;*</span>
+            </span>
+            <input type="text" class="api-input-prop api-prop-name" name="propName" value="name" required>
+          </label>
+          <label class="api-input-label">
+            <span>Image property</span>
+            <input type="text" class="api-input-prop api-prop-img" name="propImg" value="">
+          </label>
+        </div>
+        <button type="submit" class="api-submit">Use this API</button>
+      </form>
+      <form action="#" class="api-form-style" autocomplete="off">
+        <h2 class="api-title">Customize search results list</h2>
+        <div class="api-input-group">
+          <label class="api-input-label">
+            <span>List item text size</span>
+            <input type="text" class="text-size" name="textSize" value="95%">
+          </label>
+          <label class="api-input-label">
+            <span>List item text color</span>
+            <input type="text" class="text-color" data-hover="hover" name="textColor" value="#333">
+          </label>
+          <label class="api-input-label">
+            <span>List item background color</span>
+            <input type="text" class="background-color" name="backgroundColor" value="#fff">
+          </label>
+          <label class="api-input-label">
+            <span>List item hover background color</span>
+            <input type="text" class="background-color-hover" data-hover="hover" name="backgroundColorHover" value="rgba(0, 0, 0, 0.1)">
+          </label>
+          <label class="api-input-label">
+            <span>Image border color</span>
+            <input type="text" class="border-color" name="borderColor" value="lightgrey">
+          </label>
+          <label class="api-input-label">
+            <span>Image border-radius</span>
+            <input type="url" class="border-radius" name="borderRadius" value="1px">
+          </label>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/zl-fetch@latest/dist/index.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.3/purify.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
