@@ -231,13 +231,17 @@ const handleListKeyDown = (e, key) => {
 
 autocompleteInput.addEventListener('keydown', e => {
   const { key } = e
-  if (key === 'ArrowDown') selectListItem(resultsList.children[0])
+  if (key === 'ArrowDown') {
+    e.preventDefault()
+    selectListItem(resultsList.children[0])
+  }
   if (key === 'Escape') autocompleteResetBtn.click()
 })
 
 resultsList.addEventListener('keydown', e => {
   const { key } = e
   if (!e.target.closest('li')) return
+  e.preventDefault()
   handleListKeyDown(e, key)
 })
 

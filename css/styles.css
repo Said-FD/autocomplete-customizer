@@ -267,7 +267,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1;
-  max-height: 400px;
+  max-height: 80vmin;
   background-color: #fff;
   border: 2px solid var(--grey-300);
   border-radius: 4px;
@@ -279,7 +279,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .autocomplete-list {
     max-height: 605px;
   }
