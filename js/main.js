@@ -192,6 +192,7 @@ const getPrevItem = (listItems, index) => {
 }
 
 const selectListItem = targetItem => {
+  if (!targetItem) return
   targetItem.classList.add('is-selected')
   targetItem.setAttribute('tabindex', '1')
   targetItem.focus()
