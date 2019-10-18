@@ -1,4 +1,5 @@
 /* globals zlFetch */
+// Results list is still visible on blur only for visual real time customizing
 (() => {
   
 const hideList = list => list.innerHTML = ''
@@ -131,9 +132,9 @@ styleForm.addEventListener('input', e => {
 // Autocomplete customizer description
 const getContentHeight = example => {
   const content = example.querySelector('.api-example-inner')
-  
-  if (example.classList.contains('is-open')) return 0
-  return content.getBoundingClientRect().height
+  return !example.classList.contains('is-open')
+    ? content.getBoundingClientRect().height
+    : 0
 }
 
 const updateExample = (example, height) => {
@@ -161,6 +162,10 @@ const autocompleteResetBtn = autocomplete.querySelector('.autocomplete-reset-btn
 autocompleteInput.addEventListener('focus', e => {
   autocomplete.classList.add('is-active')
   e.target.removeAttribute('style')
+})
+
+autocompleteInput.addEventListener('blur', e => {
+  e.target.style.borderColor = 'var(--grey-300)'
 })
 
 autocompleteResetBtn.addEventListener('click', e => {
